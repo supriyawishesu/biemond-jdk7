@@ -17,7 +17,7 @@ define jdk7::install7 (
   $fullVersion          = 'jdk1.7.0_25',
   $x64                  = true,
   $alternativesPriority = 17065,
-  $downloadDir          = '/install',
+  $downloadDir          = '/u01/app/oracle/product',
   $urandomJavaFix       = true,
   $sourcePath           = "puppet:///modules/jdk7/",
 ) {
@@ -33,8 +33,8 @@ define jdk7::install7 (
       $installVersion = 'linux'
       $installExtension = '.tar.gz'
       $path = '/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:'
-      $user = 'root'
-      $group = 'root'
+      $user = 'oracle'
+      $group = 'noinstall'
     }
     default : {
       fail('Unrecognized operating system, please use it on a Linux host')
